@@ -9,12 +9,12 @@ long find(long a, vector<long>& parent) {
     return parent[a] = find(parent[a], parent);
 }
 
-// returns the new root
-long unite(long a, long b, vector<long>& parent) {
+// find(a) is always the new root.
+void unite(long a, long b, vector<long>& parent) {
     if (a == b) {
-        return a;
+        return;
     }
     a = find(a, parent);
     b = find(b, parent);
-    return parent[b] = a;
+    parent[b] = a;
 }
