@@ -24,6 +24,12 @@ public:
         sift_down(idx);
     }
 
+    Value get(const Key& key) const {
+        auto it = key_to_index.find(key);
+        if (it == key_to_index.end()) throw std::invalid_argument("Key not found");
+        return data[it->second].second;
+    }
+
     void erase(const Key& key) {
         auto it = key_to_index.find(key);
         if (it == key_to_index.end()) throw std::invalid_argument("Key not found");

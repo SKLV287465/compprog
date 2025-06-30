@@ -35,7 +35,7 @@ public:
         long yRoot = find(y);
 
         // If they are in the same set, no need to union
-        if (xRoot == yRoot) return;
+        if (xRoot == yRoot) return xRoot;
 
         // Union by rank
         if (rank[xRoot] < rank[yRoot]) {
