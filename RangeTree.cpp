@@ -1,3 +1,5 @@
+// Range Tree Template written by some COMP4128 Tutor (I don't know who)
+
 #include <bits/stdc++.h>
 using namespace std;
 #define long long long
