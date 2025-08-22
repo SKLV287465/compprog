@@ -11,7 +11,7 @@ using namespace std;
 
 struct FlowNetwork {
     long n;
-    vector<vector<long>> adjMat, adjList, is_virtual;
+    vector<vector<long>> adjMat, adjList, is_virtual, caps;
     // level[v] stores dist from s to v
     // uptochild[v] stores first non-useless child.
     vector<long> level, uptochild;
@@ -20,7 +20,8 @@ struct FlowNetwork {
         // adjacency matrix is zero-initialised
         adjMat.resize(n);
         is_virtual.resize(n);
-        for (long i = 0; i < n; i++) { adjMat[i].resize(n); is_virtual[i].resize(n);}
+        caps.resize(n);
+        for (long i = 0; i < n; i++) { adjMat[i].resize(n); is_virtual[i].resize(n); caps[i].resize(n); }
         adjList.resize(n);
         level.resize(n);
         uptochild.resize(n);
